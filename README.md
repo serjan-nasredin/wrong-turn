@@ -1,1 +1,1 @@
-# wrong-turn: тур по php
+# wrong-turn: процесс обучения в php
