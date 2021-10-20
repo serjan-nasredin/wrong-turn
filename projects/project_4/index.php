@@ -32,7 +32,7 @@
 			"bar" => "foo",
 			100 => -100,
 			-100 => 100
-		)
+		);
 
 
 		$array = array("foo", "bar", "hello", "world");
@@ -62,6 +62,42 @@
 		var_dump($array["foo"]);
 		var_dump($array[42]);
 		var_dump($array["multi"]["dimensional"]["array"]);
+
+		function get_array() {
+			return array(1, 2, 3);
+		}
+
+		$second_element = get_array()[1];
+
+		list(, $second_element) = get_array();
+
+		<!-- $arr[key] = value; -->
+
+		$arr = array(5 => 1, 12 => 2);
+		$arr[] = 56;
+		<!-- $arr[13] = 56; -->
+
+
+		unset($arr[5]); /* array(1, 12 => 2, 13 => 56); */
+
+		unset($arr); /* массив удалился полностью */
+
+
+		$array = array(1, 2, 3, 4, 5);
+		print_r($array);
+
+		foreach ($array as $i => $value) {
+			unset($array[$i]);
+		}
+
+		print_r($array);
+
+		$array[] = 6;
+		print_r($array); /* array[5] = 6; */
+
+		$array = array_values($array);
+		$array[] = 7;
+		print_r($array);
 	?>
 </body>
 </html>
